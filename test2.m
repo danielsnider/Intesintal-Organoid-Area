@@ -1,5 +1,13 @@
-im_smooth = imgaussfilt(raw,8,'filtersize',75);
-im_stdev = stdfilt(im_smooth);
-im_stdev_thresh = im_stdev<.6;
-im_open = imopen(im_stdev_thresh,strel('disk',30));
-figure; imshow(im_open,[]);
+f = figure;
+get_n_length_cmap_colors
+cmap = colormap('jet');
+cmap_size = size(cmap,1);
+num_desired_colors = 7;
+interval = cmap_size / num_desired_colors;
+subset_cmap = [];
+for idx=1:num_desired_colors
+    cmap_index = round(interval * idx)
+    subset_cmap(idx,:) = cmap(cmap_index,:)
+end
+
+delete(f)

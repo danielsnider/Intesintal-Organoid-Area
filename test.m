@@ -1,8 +1,10 @@
 close all
 DEBUG_FIGS = false;
 
-areas=[];
-folder = folders{1};
+all_areas = {};
+
+folder = folders{2};
+  areas=[];
   search_path = sprintf('Favourite_Images/%s/*.tif',folder);
   files = dir(search_path);
   % figure
