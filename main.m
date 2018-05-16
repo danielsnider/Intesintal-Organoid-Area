@@ -177,7 +177,6 @@ end
 %% Normalize
 norm_areas = {}
 for folder_id = 1:length(all_areas)
-  norm_areas{folder_id} = all_areas{folder_id} - all_areas{folder_id}(1); % minus all by the first point 
   norm_areas{folder_id} = all_areas{folder_id} ./ all_areas{folder_id}(1); % divide all by the first point
 end
 
